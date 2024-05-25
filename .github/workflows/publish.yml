@@ -1,0 +1,55 @@
+name: Quarto Publish
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/publish.yml"
+      - "paper.qmd"
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install Python and Dependencies
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - run: pip install jupyter
+      - run: pip install -r requirements.txt
+
+      - name: Render Quarto Project
+        run: |
+          quarto install tinytex
+          make fetch paper clean
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "outputs"
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
