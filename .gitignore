@@ -323,3 +323,7 @@ TSWLatexianTemp*
 *.sty
 *.tex
 *.ttf
+
+# RSudio files
+.RHistory
+.Rproj.user
