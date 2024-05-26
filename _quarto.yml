@@ -11,6 +11,7 @@ format:
   # https://github.com/quarto-journals/elsevier
   elsevier-pdf:
     keep-tex: true
+    fig-pos: "!htb"
     journal:
       name: Computers and Geotechnics
       formatting: review
@@ -27,6 +28,7 @@ format:
   # # https://github.com/juliantao/quarto-asce
   # asce-pdf:
   #   keep-tex: true
+  #   fig-pos: "!htb"
   #   classoption:
   #   - InsideFigs
   #   - DoubleSpace
@@ -36,6 +38,7 @@ format:
   # # https://github.com/ramiromagno/wiley-njd
   # wiley-njd-pdf:
   #   keep-tex: true
+  #   fig-pos: "!htb"
   #   classoption:
   #     - AMA
   #     - Times1COL
