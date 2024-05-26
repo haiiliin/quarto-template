@@ -312,16 +312,16 @@ TSWLatexianTemp*
 /outputs/
 /paper_files/
 /site_libs/
+paper.pdf
+paper.tex
 *.bst
 *.cls
 *.docx
 *.html
 *.otf
 *.pag
-*.pdf
 *.spl
 *.sty
-*.tex
 *.ttf
 
 # RSudio files
