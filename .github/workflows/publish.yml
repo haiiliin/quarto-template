@@ -7,7 +7,7 @@ on:
       - main
     paths:
       - ".github/workflows/publish.yml"
-      - "paper.qmd"
+      - "paper.md"
 
 env:
   BASE_URL: /${{ github.event.repository.name }}

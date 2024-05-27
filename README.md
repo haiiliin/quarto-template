@@ -4,11 +4,11 @@
 
 ## Usage
 
-Install [quarto](https://quarto.org/docs/get-started/), edit the `paper.qmd` file, and
+Install [quarto](https://quarto.org/docs/get-started/), edit the `paper.md` file, and
 run the following command to build the paper in various formats:
 
 ```shell
-quarto render paper.qmd
+quarto render paper.md
 ```
 
 You are required to have a [LaTeX](https://www.latex-project.org/get/) distribution installed on your computer if you
