@@ -8,17 +8,26 @@ on:
     paths:
       - ".github/workflows/publish.yml"
       - "paper.md"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/publish.yml"
+      - "paper.md"
+  release:
+    types: [published]
 
 env:
   BASE_URL: /${{ github.event.repository.name }}
 
 permissions:
-  contents: read
+  contents: write
   pages: write
+  pull-requests: write
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: publish-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -51,5 +60,17 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: "outputs"
+      - name: Upload release assets
+        if: github.event_name == 'release'
+        run: |
+          gh release upload ${{ github.ref_name }} outputs/*.docx --clobber
+          gh release upload ${{ github.ref_name }} outputs/*.md   --clobber
+          gh release upload ${{ github.ref_name }} outputs/*.pdf  --clobber
+          gh release upload ${{ github.ref_name }}         *.bst  --clobber || true
+          gh release upload ${{ github.ref_name }}         *.cls  --clobber || true
+          gh release upload ${{ github.ref_name }}         *.sty  --clobber || true
+          gh release upload ${{ github.ref_name }}         *.tex  --clobber || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
