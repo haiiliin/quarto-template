@@ -30,6 +30,9 @@ abstract: |
 keywords:
   - Manuscript
   - Template
+
+bibliography:
+  - references.bib
 ---
 
 # Prerequisites
