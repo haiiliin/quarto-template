@@ -5,7 +5,6 @@ format:
   html:
     toc: true
     code-fold: true
-  gfm: default
   docx: default
 
   # https://github.com/quarto-journals/elsevier
