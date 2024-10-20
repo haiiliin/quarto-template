@@ -3,26 +3,9 @@ name: Quarto Publish
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/publish.yml"
-      - "_quarto.yml"
-      - "paper.md"
   pull_request:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/publish.yml"
-      - "_quarto.yml"
-      - "paper.md"
   release:
     types: [published]
-
-permissions:
-  actions: write
-  contents: write
-  pull-requests: write
 
 concurrency:
   group: publish-${{ github.workflow }}-${{ github.ref }}
@@ -41,7 +24,7 @@ jobs:
       - name: Install Python and Dependencies
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: "pip"
       - run: pip install jupyter
       - run: pip install -r requirements.txt
@@ -50,6 +33,7 @@ jobs:
         run: |
           quarto install tinytex
           make fetch paper clean
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -67,6 +51,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
+        if: github.event_name == 'release' || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
