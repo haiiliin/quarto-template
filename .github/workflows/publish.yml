@@ -33,21 +33,11 @@ jobs:
         run: |
           quarto install tinytex
           make fetch paper clean
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          path: "outputs"
       - name: Upload release assets
         if: github.event_name == 'release'
         run: |
-          gh release upload ${{ github.ref_name }} outputs/*.docx --clobber
-          gh release upload ${{ github.ref_name }} outputs/*.md   --clobber
-          gh release upload ${{ github.ref_name }} outputs/*.pdf  --clobber
-          gh release upload ${{ github.ref_name }}         *.bst  --clobber || true
-          gh release upload ${{ github.ref_name }}         *.cls  --clobber || true
-          gh release upload ${{ github.ref_name }}         *.sty  --clobber || true
-          gh release upload ${{ github.ref_name }}         *.tex  --clobber || true
+          zip -r outputs.zip outputs
+          gh release upload ${{ github.ref_name }} outputs.zip --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to GitHub Pages
