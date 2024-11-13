@@ -2,6 +2,7 @@ project:
   type: manuscript
 
 manuscript:
+  article: index.md
   meca-bundle: true
 
 format:
