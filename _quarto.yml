@@ -1,7 +1,11 @@
 project:
-  type: website
+  type: manuscript
+
+manuscript:
+  article: paper.md
 
 format:
+  jats: default
   html:
     toc: true
     code-fold: true
