@@ -2,7 +2,7 @@ project:
   type: manuscript
 
 manuscript:
-  article: paper.md
+  meca-bundle: true
 
 format:
   jats: default
