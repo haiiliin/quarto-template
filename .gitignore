@@ -307,6 +307,7 @@ TSWLatexianTemp*
 /.quarto/
 /_extensions/
 /_site/
+/_manuscript/
 /docs/
 /node_modules/
 /outputs/
