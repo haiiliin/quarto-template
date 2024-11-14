@@ -12,7 +12,8 @@ quarto render paper.md
 ```
 
 You are required to have a [LaTeX](https://www.latex-project.org/get/) distribution installed on your computer if you
-want to build the paper in the PDF format.
+want to build the paper in the PDF format. See [PDF Engines in Quarto](https://quarto.org/docs/output-formats/pdf-engine.html)
+for more information.
 
 You can click `Use this template` button to create a new repository from this template and start writing your paper.
 More templates can be found in [Journal Articles](https://quarto.org/docs/extensions/listing-journals.html).
