@@ -10,7 +10,7 @@ format:
   html:
     toc: true
     code-fold: true
-  docx: default
+  preprint-docx: default
 
   # https://github.com/quarto-journals/elsevier
   elsevier-pdf:

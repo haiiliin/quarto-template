@@ -4,6 +4,7 @@ fetch:
 	quarto add quarto-journals/elsevier --no-prompt
 	quarto add juliantao/quarto-asce --no-prompt
 	quarto add ramiromagno/wiley-njd --no-prompt
+	quarto add mvuorre/quarto-preprint --no-prompt
 
 paper:
 	quarto render --output-dir outputs
