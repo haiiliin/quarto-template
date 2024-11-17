@@ -3,7 +3,12 @@ name: Quarto Publish
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
+    types: [opened, reopened, synchronize]
   release:
     types: [published]
 
