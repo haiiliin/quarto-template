@@ -8,21 +8,6 @@ author:
     affiliation:
       - Department of Civil and Environmental Engineering, The Hong Kong Polytechnic University, Hong Kong, China
       - Department of Geotechnical Engineering, College of Civil Engineering, Tongji University, Shanghai, China
-  - name: Zhen-Yu Yin
-    orcid: 0000-0003-4154-7304
-    email: zhenyu.yin@polyu.edu.hk
-    corresponding: true
-    affiliation:
-      - Department of Civil and Environmental Engineering, The Hong Kong Polytechnic University, Hong Kong, China
-  - name: Xiao-Qiang Gu
-    email: guxiaoqiang@tongji.edu.cn
-    affiliation:
-      - Department of Geotechnical Engineering, College of Civil Engineering, Tongji University, Shanghai, China
-  - name: Yin-Fu Jin
-    orcid: 0000-0003-0522-1702
-    email: yinfujin@szu.edu.cn
-    affiliation:
-      - College of Civil and Transportation Engineering, Shenzhen University, Shenzhen, China
 
 abstract: |
   The [quarto-template](https://github.com/haiiliin/quarto-template) is a Quarto template for writing academic papers. The template is based on the [Quarto](https://quarto.org) document system, which is a document system that supports the entire research lifecycle, from initial exploration to final publication. The template provides a simple and clean layout for writing academic papers, which is suitable for researchers who want to focus on the content of the paper rather than the formatting.
