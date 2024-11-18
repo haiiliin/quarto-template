@@ -1,5 +1,7 @@
 project:
   type: manuscript
+  render:
+    - "index.md"
 
 manuscript:
   article: index.md
