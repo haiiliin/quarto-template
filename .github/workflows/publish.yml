@@ -22,9 +22,13 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.6.33
 
       - name: Render Quarto Project
         run: |
@@ -38,6 +42,27 @@ jobs:
           gh release upload ${{ github.ref_name }} outputs.zip --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get the latest tag and current short sha
+        run: |
+          echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Build diff for the latest changes
+        run: |
+          if [ -d "releases/$tag" ]; then
+            echo "latexdiff=true" >> $GITHUB_ENV
+            sudo apt update
+            sudo apt install -y latexdiff texlive-latex-extra texlive-xetex texlive-publishers
+
+            make release-$sha
+            make diff previous=$tag current=$sha
+          fi
+
+      - name: Upload latexdiff assets
+        if: env.latexdiff == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          path: releases/${{ env.sha }}
 
       - name: Deploy to GitHub Pages
         if: github.event_name != 'pull_request'
