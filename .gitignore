@@ -304,6 +304,7 @@ TSWLatexianTemp*
 ._wordcount_selection.tex
 
 # Quarto outputs files
+index-listing.json
 /.quarto/
 /_extensions/
 /_site/
@@ -312,18 +313,24 @@ TSWLatexianTemp*
 /node_modules/
 /outputs/
 /paper_files/
+/releases/*/*.xml
+/releases/*/*.zip
+/releases/*/_tex/
+/releases/*/figures/
+/releases/*/site_libs/
 /site_libs/
-paper.pdf
-paper.tex
-*.bst
-*.cls
-*.docx
+/*.bst
+/*.cls
+/*.docx
+/*.pdf
+/*.sty
+/*.tex
 *.html
-*.otf
 *.pag
 *.spl
-*.sty
+*.otf
 *.ttf
+*.xml
 
 # RSudio files
 .RHistory
