@@ -17,7 +17,7 @@ release-%:
 	quarto render --output-dir releases/$*
 	cp releases/$*/_tex/*.* releases/$*/ || true
 	mv releases/$*/index.tex releases/$*/$(project).tex
-	cp index.md releases/$*/$(project).md
+	cp paper.md releases/$*/$(project).md
 
 # make diff previous=<previous release> current=<current release>
 diff:
