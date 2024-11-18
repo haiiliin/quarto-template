@@ -29,6 +29,8 @@ To render the paper to PDF, you also need to have a LaTeX distribution installed
 quarto install tinytex
 ```
 
+See [PDF Engines in Quarto](https://quarto.org/docs/output-formats/pdf-engine.html) for more information.
+
 The GNU Make utility is required to run the commands in the `Makefile`. You can install GNU Make by following the instructions on the [GNU Make website](https://www.gnu.org/software/make/). If you are using Windows, you can install GNU Make from the [GnuWin32](http://gnuwin32.sourceforge.net/packages/make.htm) project.
 
 To clone the repository and run the commands in the `Makefile`, you need to have Git installed on your computer. You can install Git by following the instructions on the [Git website](https://git-scm.com/). If you prefer to use a graphical user interface for Git, you can install [GitHub Desktop](https://desktop.github.com/).
@@ -58,13 +60,25 @@ make paper  # Render the paper to docx, html, and pdf files
 make clean  # Clean up the intermediate files
 ```
 
+## Making releases
+
+You can use the following to make a release, markdown, tex, docx, and pdf documents will be archived in the directory `releases/<tag>`:
+
+```shell
+make release-<tag>
+```
+
+You can also use the following command to generate a diff file compared with a previous release using latexdiff:
+
+```shell
+make diff previous=<previous-tag> current=<current-tag>
+```
+
 ## Commit and push
 
 After writing the paper, commit and push the changes to your repository. You can then share the link to the repository with your collaborators or submit the paper to a journal for publication.
 
-After every push, the paper will be automatically rendered to docx, html, and pdf files using GitHub Actions. You can download the rendered files from the `Actions` tab of your repository. You can also create GitHub releases to tag specific versions of the paper, which will also trigger the rendering of the paper and the output files will be attached to the release.
-
-A html version of the paper will be published to the `gh-pages` branch of the repository. You can turn on the GitHub Pages feature in the repository settings to publish the html version of the paper to the web. You can then view the paper online by visiting the link provided in the repository settings.
+A html version of the paper will be published to the `gh-pages` branch of the repository after every commit. You can turn on the GitHub Pages feature in the repository settings to publish the html version of the paper to the web. You can then view the paper online by visiting the link provided in the repository settings.
 
 > [!Note]
 > You need to turn on the **Read and write permissions** for the **Actions** in the **Settings** of your repository to grant the permission for the GitHub Actions to upload the rendered files.
