@@ -316,7 +316,6 @@ index-listing.json
 /releases/*/*.xml
 /releases/*/*.zip
 /releases/*/_tex/
-/releases/*/figures/
 /releases/*/site_libs/
 /site_libs/
 /*.bst
