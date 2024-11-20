@@ -20,6 +20,13 @@ bibliography:
   - references.bib
 ---
 
+# Features
+
+- Write academic papers in markdown, focus on the content rather than the formatting. See [Quarto documentation](https://quarto.org/docs/guide/) for more information.
+- Export to html, docx, and pdf formats using the Quarto document system (`make paper`).
+- Make releases with markdown, tex, docx, and pdf documents archived (`make release-<tag>`). Generate a diff file compared with a previous release using latexdiff (`make diff previous=<previous-tag> current=<current-tag>`).
+- Publish the HTML version of the paper to the web using GitHub Pages.
+
 # Prerequisites
 
 To use the template, you need to have the Quarto document system installed on your computer. You can install Quarto by following the instructions on the [Quarto website](https://quarto.org/docs/getting-started/).
