@@ -6,6 +6,10 @@ project:
 manuscript:
   article: paper.md
   meca-bundle: true
+  code-links:
+    - text: Code Repository
+      icon: file-code
+      href: https://github.com/haiiliin/quarto-template/
 
 format:
   jats: default
