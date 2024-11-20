@@ -2,7 +2,7 @@ project = index
 
 all: paper clean
 
-fetch:
+deps:
 	quarto add quarto-journals/elsevier --no-prompt
 	quarto add juliantao/quarto-asce --no-prompt
 	quarto add ramiromagno/wiley-njd --no-prompt
@@ -10,6 +10,9 @@ fetch:
 
 paper:
 	quarto render --output-dir outputs
+
+%:
+	quarto render --output-dir outputs --to $*
 
 # make release-<version>
 release-%:
@@ -28,4 +31,4 @@ diff:
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
 
 clean:
-	rm -rf .quarto Arial Helvetica Lato MinionPro MyriadPro NewcenturySchoolBk paper_files Stix Univers *.otf *.pag *.spl *.ttf
+	git clean -Xdf

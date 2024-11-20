@@ -33,7 +33,7 @@ jobs:
       - name: Render Quarto Project
         run: |
           quarto install tinytex
-          make fetch paper clean
+          make deps paper
 
       - name: Upload release assets
         if: github.event_name == 'release'

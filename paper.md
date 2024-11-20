@@ -62,7 +62,7 @@ To configure the metadata of the paper, such as the title, authors, abstract, an
 
 To render the paper to PDF, run the following commands in the terminal:
 ```sh
-make fetch  # Fetch the extensions for journal articles
+make deps   # Fetch the extensions for journal articles
 make paper  # Render the paper to docx, html, and pdf files
 make clean  # Clean up the intermediate files
 ```
