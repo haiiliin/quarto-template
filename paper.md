@@ -5,6 +5,7 @@ author:
   - name: Hai-Lin Wang
     orcid: 0000-0001-5759-2455
     email: hailin.wang@connect.polyu.hk
+    corresponding: true
     affiliation:
       - Department of Civil and Environmental Engineering, The Hong Kong Polytechnic University, Hong Kong, China
       - Department of Geotechnical Engineering, College of Civil Engineering, Tongji University, Shanghai, China
