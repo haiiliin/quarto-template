@@ -3,6 +3,9 @@ project:
   render:
     - "paper.md"
 
+comments:
+  hypothesis: true
+
 manuscript:
   article: paper.md
   meca-bundle: true
