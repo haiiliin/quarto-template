@@ -29,10 +29,12 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: 1.6.33
+          tinytex: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Render Quarto Project
         run: |
-          quarto install tinytex
           make deps paper
 
       - name: Upload release assets
