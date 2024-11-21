@@ -40,8 +40,8 @@ jobs:
       - name: Upload release assets
         if: github.event_name == 'release'
         run: |
-          zip -r outputs.zip outputs
-          gh release upload ${{ github.ref_name }} outputs.zip --clobber
+          zip -r paper-${{ github.ref_name }}.zip outputs
+          gh release upload ${{ github.ref_name }} paper-${{ github.ref_name }}.zip --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
