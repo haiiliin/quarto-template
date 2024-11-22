@@ -56,7 +56,7 @@ jobs:
           if [ -d "releases/$tag" ]; then
             echo "latexdiff=true" >> $GITHUB_ENV
             sudo apt update
-            sudo apt install -y latexdiff texlive-latex-extra texlive-xetex texlive-publishers
+            sudo apt install -y latexdiff texlive-latex-extra texlive-xetex texlive-publishers texlive-lang-chinese
 
             make release-$sha
             make diff previous=$tag current=$sha
