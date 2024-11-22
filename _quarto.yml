@@ -1,7 +1,5 @@
 project:
-  type: manuscript
-  render:
-    - "paper.md"
+  type: website
 
 comments:
   hypothesis: true
@@ -13,6 +11,28 @@ manuscript:
     - text: Code Repository
       icon: file-code
       href: https://github.com/haiiliin/quarto-template/
+
+website:
+  title: Hailin Wang
+  back-to-top-navigation: true
+  page-navigation: true
+  repo-url: https://github.com/haiiliin/quarto-template
+  repo-actions: [edit, issue]
+  search: true
+  navbar:
+    background: primary
+    search: true
+    tools:
+      - icon: house
+        href: https://hailin.wang/
+      - icon: github
+        menu:
+          - text: Home Page
+            href: https://github.com/haiiliin/
+          - text: Source Code
+            href: https://github.com/haiiliin/quarto-template/
+  sidebar:
+    contents: auto
 
 format:
   jats: default
