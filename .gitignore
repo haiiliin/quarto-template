@@ -304,7 +304,7 @@ TSWLatexianTemp*
 ._wordcount_selection.tex
 
 # Quarto outputs files
-index-listing.json
+paper-listing.json
 /.quarto/
 /_extensions/
 /_site/
@@ -325,6 +325,7 @@ index-listing.json
 /*.sty
 /*.tex
 *.html
+*.json
 *.pag
 *.spl
 *.otf
