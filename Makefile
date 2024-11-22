@@ -30,7 +30,7 @@ release-%:
 diff:
 	cd releases/$(current) && latexdiff --disable-citation-markup --graphics-markup=none ../$(previous)/$(project).tex $(project).tex > $(project)-diff-$(previous)-$(current).tex
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
-	cd releases/$(current) && bibtex  $(project)-diff-$(previous)-$(current).aux
+	cd releases/$(current) && bibtex  $(project)-diff-$(previous)-$(current).aux || true
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
 
