@@ -47,6 +47,9 @@ format:
   elsevier-pdf:
     keep-tex: true
     fig-pos: "!htb"
+    include-in-header:
+      - text: |
+          \usepackage{ctex}
     journal:
       name: Computers and Geotechnics
       formatting: review
@@ -64,6 +67,9 @@ format:
   # asce-pdf:
   #   keep-tex: true
   #   fig-pos: "!htb"
+  #   include-in-header:
+  #     - text: |
+  #         \usepackage{ctex}
   #   classoption:
   #   - InsideFigs
   #   - DoubleSpace
@@ -74,6 +80,9 @@ format:
   # wiley-njd-pdf:
   #   keep-tex: true
   #   fig-pos: "!htb"
+  #   include-in-header:
+  #     - text: |
+  #         \usepackage{ctex}
   #   classoption:
   #     - AMA
   #     - Times1COL
