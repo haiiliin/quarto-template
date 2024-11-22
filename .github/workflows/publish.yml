@@ -51,6 +51,7 @@ jobs:
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Build diff for the latest changes
+        if: env.tag != ''
         run: |
           if [ -d "releases/$tag" ]; then
             echo "latexdiff=true" >> $GITHUB_ENV
