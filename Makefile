@@ -1,4 +1,4 @@
-project = index
+project = paper
 
 all: paper clean
 
@@ -18,8 +18,12 @@ paper:
 release-%:
 	mkdir -p releases/$*
 	quarto render --output-dir releases/$*
-	cp releases/$*/_tex/*.* releases/$*/ || true
-	mv releases/$*/index.tex releases/$*/$(project).tex
+	cp *.bib releases/$*/ || true
+	cp *.bst releases/$*/ || true
+	cp *.cls releases/$*/ || true
+	cp *.sty releases/$*/ || true
+	cp *.tex releases/$*/ || true
+	mv releases/$*/paper.tex releases/$*/$(project).tex || true
 	cp paper.md releases/$*/$(project).md
 
 # make diff previous=<previous release> current=<current release>
