@@ -33,6 +33,7 @@ website:
             href: https://github.com/haiiliin/quarto-template/
   sidebar:
     style: docked
+    collapse-level: 1
     contents: auto
 
 format:
