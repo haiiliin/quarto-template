@@ -32,6 +32,7 @@ website:
           - text: Source Code
             href: https://github.com/haiiliin/quarto-template/
   sidebar:
+    style: docked
     contents: auto
 
 format:
