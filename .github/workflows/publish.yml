@@ -64,7 +64,7 @@ jobs:
           fi
 
       - name: Upload latexdiff assets
-        if: env.latexdiff == 'true'
+        if: env.latexdiff == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
           path: releases/${{ env.sha }}
