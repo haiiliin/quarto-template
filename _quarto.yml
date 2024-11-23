@@ -42,6 +42,7 @@ format:
     toc: true
     code-fold: true
     appendix-cite-as: display
+    link-external-newwindow: true
     format-links:
       - preprint-docx
       - elsevier-pdf
