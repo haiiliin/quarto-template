@@ -60,6 +60,7 @@ jobs:
 
             make release-$sha
             make diff previous=$tag current=$sha
+            cp releases/$sha/paper-diff-$tag-$sha.pdf outputs/paper-diff.pdf
           fi
 
       - name: Upload latexdiff assets

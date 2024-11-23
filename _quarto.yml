@@ -41,6 +41,13 @@ format:
   html:
     toc: true
     code-fold: true
+    appendix-cite-as: display
+    format-links:
+      - preprint-docx
+      - elsevier-pdf
+      - text: PDF (latexdiff)
+        icon: file-pdf
+        href: paper-diff.pdf
   preprint-docx: default
 
   # https://github.com/quarto-journals/elsevier
