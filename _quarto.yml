@@ -48,7 +48,9 @@ format:
       - text: PDF (latexdiff)
         icon: file-pdf
         href: paper-diff.pdf
-  preprint-docx: default
+  preprint-docx:
+    filters:
+      - authors.lua
 
   # https://github.com/quarto-journals/elsevier
   elsevier-pdf:
