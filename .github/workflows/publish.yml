@@ -54,6 +54,8 @@ jobs:
 
             mkdir -p changes
             pandiff releases/$tag/paper.md paper.md --output changes/paper.md
+            sed -n '/^---$/,/^---$/p' paper.md > changes/_metadata.yml
+            cat changes/_metadata.yml changes/paper.md > changes/paper.md
           fi
 
       - name: Render Quarto Project
