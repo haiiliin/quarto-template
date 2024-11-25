@@ -46,7 +46,7 @@ jobs:
           echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-      - name: Generate changes diff
+      - name: Generate changes
         if: env.tag != ''
         run: |
           if [ -d "releases/$tag" ]; then
