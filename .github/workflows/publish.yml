@@ -38,6 +38,9 @@ jobs:
         with:
           node-version: latest
 
+      - name: Setup pandoc
+        uses: pandoc/actions/setup@v1
+
       - name: Get the latest tag and current short sha
         run: |
           echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
