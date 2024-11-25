@@ -8,6 +8,7 @@ deps:
 	quarto add ramiromagno/wiley-njd --no-prompt
 	quarto add mvuorre/quarto-preprint --no-prompt
 	quarto add kapsner/authors-block --no-prompt
+	quarto add mloubout/critic-markup --no-prompt
 
 paper:
 	quarto render --output-dir outputs

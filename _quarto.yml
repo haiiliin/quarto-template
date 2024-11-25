@@ -49,6 +49,8 @@ format:
       - text: PDF (latexdiff)
         icon: file-pdf
         href: paper-diff.pdf
+    filters:
+      - critic-markup
   preprint-docx:
     filters:
       - abstract.lua
