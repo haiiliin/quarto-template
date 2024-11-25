@@ -36,6 +36,9 @@ website:
     collapse-level: 1
     contents: auto
 
+filters:
+  - critic-markup
+
 format:
   jats: default
   html:
@@ -49,8 +52,6 @@ format:
       - text: PDF (latexdiff)
         icon: file-pdf
         href: paper-diff.pdf
-    filters:
-      - critic-markup
   preprint-docx:
     filters:
       - abstract.lua
