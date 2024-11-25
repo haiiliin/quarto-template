@@ -53,9 +53,8 @@ jobs:
             npm install -g pandiff
 
             mkdir -p changes
-            pandiff releases/$tag/paper.md paper.md --output changes/paper.md.tmp
-            sed -n '/^---$/,/^---$/p' paper.md > changes/metadata.yml
-            cat changes/metadata.yml changes/paper.md.tmp > changes/paper.md
+            pandiff releases/$tag/paper.md paper.md --output changes/paper.md
+            awk '/^---/{flag=!flag} flag' paper.md > changes/_metadata.yml
           fi
 
       - name: Render Quarto Project
