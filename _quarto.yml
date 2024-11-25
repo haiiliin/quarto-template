@@ -51,7 +51,8 @@ format:
         href: paper-diff.pdf
   preprint-docx:
     filters:
-      - authors.lua
+      - abstract.lua
+      - authors-block
 
   # https://github.com/quarto-journals/elsevier
   elsevier-pdf:

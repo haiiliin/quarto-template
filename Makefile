@@ -7,6 +7,7 @@ deps:
 	quarto add juliantao/quarto-asce --no-prompt
 	quarto add ramiromagno/wiley-njd --no-prompt
 	quarto add mvuorre/quarto-preprint --no-prompt
+	quarto add kapsner/authors-block --no-prompt
 
 paper:
 	quarto render --output-dir outputs
