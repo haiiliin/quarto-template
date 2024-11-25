@@ -8,6 +8,7 @@ deps:
 	quarto add ramiromagno/wiley-njd --no-prompt
 	quarto add mvuorre/quarto-preprint --no-prompt
 	quarto add kapsner/authors-block --no-prompt
+	quarto add mloubout/critic-markup --no-prompt
 
 paper:
 	quarto render --output-dir outputs
@@ -34,6 +35,12 @@ diff:
 	cd releases/$(current) && bibtex  $(project)-diff-$(previous)-$(current).aux || true
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
+
+change-%:
+	mkdir -p changes
+	pandiff releases/$*/paper.md paper.md --output changes/paper.md
+	awk '/^---/{flag=!flag} flag' paper.md > changes/_metadata.yml
+	cp -r figures *.bib *.lua changes || true
 
 clean:
 	git clean -Xdf

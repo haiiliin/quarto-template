@@ -33,6 +33,27 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Setup pandoc
+        uses: pandoc/actions/setup@v1
+
+      - name: Get the latest tag and current short sha
+        run: |
+          echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Generate changes
+        if: env.tag != ''
+        run: |
+          if [ -d "releases/$tag" ]; then
+            npm install -g pandiff
+            make change-$tag
+          fi
+
       - name: Render Quarto Project
         run: |
           make deps paper
@@ -44,11 +65,6 @@ jobs:
           gh release upload ${{ github.ref_name }} paper-${{ github.ref_name }}.zip --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Get the latest tag and current short sha
-        run: |
-          echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
-          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Build diff for the latest changes
         if: env.tag != ''
