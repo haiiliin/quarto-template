@@ -40,7 +40,7 @@ change-%:
 	mkdir -p changes
 	pandiff releases/$*/paper.md paper.md --output changes/paper.md
 	awk '/^---/{flag=!flag} flag' paper.md > changes/_metadata.yml
-	cp -r figures/* *.bib *.lua  changes/ || true
+	cp -r figures *.bib *.lua changes || true
 
 clean:
 	git clean -Xdf
