@@ -47,7 +47,7 @@ jobs:
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Generate changes
-        if: env.tag != ''
+        if: env.tag != '' && 0 == 1
         run: |
           if [ -d "releases/$tag" ]; then
             npm install -g pandiff
