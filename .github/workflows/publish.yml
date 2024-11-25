@@ -43,13 +43,14 @@ jobs:
           echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-      - name: Build diff for the latest changes
+      - name: Generate changes diff
         if: env.tag != ''
         run: |
           if [ -d "releases/$tag" ]; then
             npm install -g pandiff
 
-            pandiff releases/$tag/paper.md paper.md --output paper-diff.md
+            mkdir -p changes
+            pandiff releases/$tag/paper.md paper.md --output changes/paper.md
           fi
 
       - name: Render Quarto Project
