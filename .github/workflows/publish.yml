@@ -51,10 +51,7 @@ jobs:
         run: |
           if [ -d "releases/$tag" ]; then
             npm install -g pandiff
-
-            mkdir -p changes
-            pandiff releases/$tag/paper.md paper.md --output changes/paper.md
-            awk '/^---/{flag=!flag} flag' paper.md > changes/_metadata.yml
+            make change-$tag
           fi
 
       - name: Render Quarto Project
