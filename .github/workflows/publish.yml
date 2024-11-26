@@ -41,7 +41,7 @@ jobs:
       - name: Setup pandoc
         uses: pandoc/actions/setup@v1
 
-      - name: Get the latest version
+      - name: Get the latest version and current short sha
         run: |
           echo "version=$(cat releases/VERSION || echo '')" >> $GITHUB_ENV
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
