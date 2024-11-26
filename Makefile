@@ -27,6 +27,7 @@ release-%:
 	cp *.tex releases/$*/ || true
 	mv releases/$*/paper.tex releases/$*/$(project).tex || true
 	cp paper.md releases/$*/$(project).md
+	echo $* > releases/VERSION
 
 # make diff previous=<previous release> current=<current release>
 diff:
