@@ -41,17 +41,16 @@ jobs:
       - name: Setup pandoc
         uses: pandoc/actions/setup@v1
 
-      - name: Get the latest tag and current short sha
+      - name: Get the latest version
         run: |
-          echo "tag=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
-          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo "version=$(cat releases/VERSION || echo '')" >> $GITHUB_ENV
 
       - name: Generate changes
-        if: env.tag != '' && 0 == 1
+        if: env.version != '' && 0 == 1
         run: |
-          if [ -d "releases/$tag" ]; then
+          if [ -d "releases/$version" ]; then
             npm install -g pandiff
-            make change-$tag
+            make change-$version
           fi
 
       - name: Render Quarto Project
@@ -67,16 +66,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build diff for the latest changes
-        if: env.tag != ''
+        if: env.version != ''
         run: |
-          if [ -d "releases/$tag" ]; then
+          if [ -d "releases/$version" ]; then
             echo "latexdiff=true" >> $GITHUB_ENV
             sudo apt update
             sudo apt install -y latexdiff texlive-latex-extra texlive-xetex texlive-publishers texlive-lang-chinese
 
             make release-$sha
-            make diff previous=$tag current=$sha
-            cp releases/$sha/paper-diff-$tag-$sha.pdf outputs/paper-diff.pdf
+            make diff previous=$version current=$sha
+            cp releases/$sha/paper-diff-$version-$sha.pdf outputs/paper-diff.pdf
           fi
 
       - name: Upload latexdiff assets
