@@ -66,7 +66,7 @@ format:
     include-in-header:
       - text: |
           \usepackage{ctex}
-          \usepackage{lineno}
+          \usepackage[mathlines]{lineno}
     include-before-body:
       - text: |
           \linenumbers
