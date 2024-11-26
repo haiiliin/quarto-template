@@ -65,6 +65,10 @@ format:
     include-in-header:
       - text: |
           \usepackage{ctex}
+          \usepackage{lineno}
+    include-before-body:
+      - text: |
+          \linenumbers
     journal:
       name: Computers and Geotechnics
       formatting: review
