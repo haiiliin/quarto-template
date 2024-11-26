@@ -44,6 +44,7 @@ jobs:
       - name: Get the latest version
         run: |
           echo "version=$(cat releases/VERSION || echo '')" >> $GITHUB_ENV
+          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - name: Generate changes
         if: env.version != '' && 0 == 1
