@@ -62,6 +62,7 @@ format:
   elsevier-pdf:
     keep-tex: true
     fig-pos: "!htb"
+    fig-align: center
     include-in-header:
       - text: |
           \usepackage{ctex}
