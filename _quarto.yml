@@ -46,6 +46,7 @@ format:
     code-fold: true
     appendix-cite-as: display
     link-external-newwindow: true
+    default-image-extension: svg
     format-links:
       - preprint-docx
       - elsevier-pdf
