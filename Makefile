@@ -19,7 +19,7 @@ paper:
 # make release-<version>
 release-%:
 	mkdir -p releases/$*
-	quarto render --output-dir releases/$*
+	quarto render paper.md --output-dir releases/$*
 	cp *.bib releases/$*/ || true
 	cp *.bst releases/$*/ || true
 	cp *.cls releases/$*/ || true
