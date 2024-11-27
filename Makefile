@@ -28,7 +28,6 @@ release-%:
 	mv releases/$*/paper.tex releases/$*/$(project).tex || true
 	cp paper.md releases/$*/$(project).md
 	echo $* > releases/VERSION
-	git tag $*
 
 # make diff previous=<previous release> current=<current release>
 diff:
