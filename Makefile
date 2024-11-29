@@ -2,13 +2,25 @@ project = paper
 
 all: paper clean
 
-deps:
+elsevier:
 	quarto add quarto-journals/elsevier --no-prompt
+
+asce:
 	quarto add juliantao/quarto-asce --no-prompt
+
+wiley:
 	quarto add ramiromagno/wiley-njd --no-prompt
+
+preprint:
 	quarto add mvuorre/quarto-preprint --no-prompt
+
+authors-block:
 	quarto add kapsner/authors-block --no-prompt
+
+critic-markup:
 	quarto add mloubout/critic-markup --no-prompt
+
+deps: elsevier asce wiley preprint authors-block critic-markup
 
 paper:
 	quarto render --output-dir outputs
