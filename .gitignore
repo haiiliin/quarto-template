@@ -306,7 +306,6 @@ TSWLatexianTemp*
 # Quarto outputs files
 paper-listing.json
 /.quarto/
-/_extensions/
 /_site/
 /_manuscript/
 /docs/

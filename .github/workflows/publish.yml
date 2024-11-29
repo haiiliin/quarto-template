@@ -28,7 +28,7 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: 1.6.33
+          version: 1.6.39
           tinytex: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,7 +56,7 @@ jobs:
 
       - name: Render Quarto Project
         run: |
-          make deps paper
+          make paper
 
       - name: Upload release assets
         if: github.event_name == 'release'
