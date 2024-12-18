@@ -17,6 +17,9 @@ preprint:
 authors-block:
 	quarto add kapsner/authors-block --no-prompt
 
+geotechnique:
+	quarto add haiiliin/quarto-geotechnique --no-prompt
+
 critic-markup:
 	quarto add mloubout/critic-markup --no-prompt
 
