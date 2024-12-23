@@ -1,5 +1,7 @@
 project:
   type: website
+  render:
+    - paper.md
 
 comments:
   hypothesis: true
@@ -53,6 +55,7 @@ format:
         icon: file-pdf
         href: paper-diff.pdf
   preprint-docx:
+    csl: styles/harvard-cite-them-right.csl
     filters:
       - abstract.lua
       - authors-block
