@@ -11,9 +11,6 @@ asce:
 wiley:
 	quarto add ramiromagno/wiley-njd --no-prompt
 
-preprint:
-	quarto add mvuorre/quarto-preprint --no-prompt
-
 authors-block:
 	quarto add kapsner/authors-block --no-prompt
 
@@ -23,7 +20,7 @@ geotechnique:
 critic-markup:
 	quarto add mloubout/critic-markup --no-prompt
 
-deps: elsevier asce wiley preprint authors-block critic-markup
+deps: elsevier asce wiley authors-block critic-markup
 
 paper:
 	quarto render --output-dir outputs

@@ -49,12 +49,13 @@ format:
     appendix-cite-as: display
     link-external-newwindow: true
     format-links:
-      - preprint-docx
+      - docx
       - elsevier-pdf
       - text: PDF (latexdiff)
         icon: file-pdf
         href: paper-diff.pdf
-  preprint-docx:
+  docx:
+    reference-doc: template.docx
     csl: styles/harvard-cite-them-right.csl
     filters:
       - abstract.lua
