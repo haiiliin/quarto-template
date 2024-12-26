@@ -20,7 +20,10 @@ geotechnique:
 critic-markup:
 	quarto add mloubout/critic-markup --no-prompt
 
-deps: elsevier asce wiley authors-block critic-markup
+wordcount:
+	quarto add andrewheiss/quarto-wordcount --no-prompt
+
+deps: elsevier asce wiley authors-block critic-markup wordcount
 
 paper:
 	quarto render --output-dir outputs

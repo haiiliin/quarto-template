@@ -60,6 +60,7 @@ format:
     filters:
       - abstract.lua
       - authors-block
+      - _extensions/andrewheiss/wordcount/wordcount.lua
 
   # https://github.com/quarto-journals/elsevier
   elsevier-pdf:
