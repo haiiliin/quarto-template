@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - "**/*diff*"
   render:
     - paper.md
 
