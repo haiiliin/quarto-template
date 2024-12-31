@@ -53,9 +53,6 @@ format:
     format-links:
       - docx
       - elsevier-pdf
-      - text: PDF (latexdiff)
-        icon: file-pdf
-        href: paper-diff.pdf
   docx:
     reference-doc: template.docx
     csl: styles/harvard-cite-them-right.csl
