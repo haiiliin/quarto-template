@@ -34,6 +34,7 @@ paper:
 # make release-<version>
 release-%:
 	mkdir -p releases/$*
+	cp paper.md paper-1.md
 	quarto render paper.md --output-dir releases/$*
 	cp *.bib releases/$*/ || true
 	cp *.bst releases/$*/ || true
@@ -41,7 +42,8 @@ release-%:
 	cp *.sty releases/$*/ || true
 	cp *.tex releases/$*/ || true
 	mv releases/$*/paper.tex releases/$*/$(project).tex || true
-	cp paper.md releases/$*/$(project).md
+	sed -i '/# REMOVE IN RELEASE: START/,/# REMOVE IN RELEASE: END/d' paper.md
+	cp paper.md releases/$*/$(project).md && mv paper-1.md paper.md
 	echo $* > releases/VERSION
 
 # make diff previous=<previous release> current=<current release>
