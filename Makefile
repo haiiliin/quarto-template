@@ -51,6 +51,12 @@ diff:
 	cd releases/$(current) && bibtex  $(project)-diff-$(previous)-$(current).aux || true
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
+	echo "format:" >> releases/$(current)/_metadata.yml
+	echo "  html:" >> releases/$(current)/_metadata.yml
+	echo "    format-links:" >> releases/$(current)/_metadata.yml
+	echo "      - text: PDF (latexdiff)" >> releases/$(current)/_metadata.yml
+	echo "        icon: file-pdf" >> releases/$(current)/_metadata.yml
+	echo "        href: $(project)-diff-$(previous)-$(current).pdf" >> releases/$(current)/_metadata.yml
 
 change-%:
 	mkdir -p changes
