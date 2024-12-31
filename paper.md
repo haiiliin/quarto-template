@@ -18,6 +18,13 @@ keywords:
   - Template
 
 bibliography: [references.bib]
+
+format:
+  html:
+    format-links:
+      - text: PDF (latexdiff)
+        icon: file-pdf
+        href: paper-diff.pdf
 ---
 
 # Features
