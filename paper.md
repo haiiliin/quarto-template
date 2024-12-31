@@ -19,12 +19,14 @@ keywords:
 
 bibliography: [references.bib]
 
+# REMOVE IN RELEASE: START
 format:
   html:
     format-links:
       - text: PDF (latexdiff)
         icon: file-pdf
         href: paper-diff.pdf
+# REMOVE IN RELEASE: END
 ---
 
 # Features
