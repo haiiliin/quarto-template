@@ -49,11 +49,12 @@ release-%:
 # make diff previous=<previous release> current=<current release>
 diff:
 	cd releases/$(current) && latexdiff --graphics-markup=both --math-markup=whole ../$(previous)/$(project).tex $(project).tex > $(project)-diff-$(previous)-$(current).tex
+	cp -n releases/$(previous)/figures/* releases/$(current)/figures/ || true
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
 	cd releases/$(current) && bibtex  $(project)-diff-$(previous)-$(current).aux || true
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
-	echo "format:" >> releases/$(current)/_metadata.yml
+	echo "format:" > releases/$(current)/_metadata.yml
 	echo "  html:" >> releases/$(current)/_metadata.yml
 	echo "    format-links:" >> releases/$(current)/_metadata.yml
 	echo "      - text: PDF (latexdiff)" >> releases/$(current)/_metadata.yml
