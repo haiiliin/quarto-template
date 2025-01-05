@@ -3,7 +3,8 @@ project:
   resources:
     - "**/*diff*"
   render:
-    - paper.md
+    - "paper*.md"
+    - "releases/*/*.md"
 
 comments:
   hypothesis: true
