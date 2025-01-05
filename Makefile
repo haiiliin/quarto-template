@@ -34,12 +34,10 @@ paper:
 # make release-<version>
 release-%:
 	mkdir -p releases/$*
-	cp paper.md paper-1.md
 	quarto render paper.md --output-dir releases/$*
 	cp *.bib *.bst *.cls *.sty *.tex releases/$*/ || true
 	mv releases/$*/paper.tex releases/$*/$(project).tex || true
-	sed -i '/# REMOVE IN RELEASE: START/,/# REMOVE IN RELEASE: END/d' paper.md
-	cp paper.md releases/$*/$(project).md && mv paper-1.md paper.md
+	cp paper.md releases/$*/$(project).md
 	echo $* > releases/VERSION
 
 # make diff previous=<previous release> current=<current release>
@@ -50,12 +48,6 @@ diff:
 	cd releases/$(current) && bibtex  $(project)-diff-$(previous)-$(current).aux || true
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
 	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
-	echo "format:" > releases/$(current)/_metadata.yml
-	echo "  html:" >> releases/$(current)/_metadata.yml
-	echo "    format-links:" >> releases/$(current)/_metadata.yml
-	echo "      - text: PDF (latexdiff)" >> releases/$(current)/_metadata.yml
-	echo "        icon: file-pdf" >> releases/$(current)/_metadata.yml
-	echo "        href: $(project)-diff-$(previous)-$(current).pdf" >> releases/$(current)/_metadata.yml
 
 change-%:
 	mkdir -p changes
