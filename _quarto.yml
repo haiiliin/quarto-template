@@ -60,7 +60,7 @@ format:
         href: paper-diff.pdf
   docx:
     reference-doc: template.docx
-    csl: styles/harvard-cite-them-right.csl
+    csl: styles/emerald-harvard.csl
     filters:
       - abstract.lua
       - authors-block
