@@ -73,7 +73,7 @@ jobs:
           if [ -d "releases/$version" ]; then
             echo "latexdiff=true" >> $GITHUB_ENV
             sudo apt update
-            sudo apt install -y latexdiff texlive-latex-extra texlive-xetex texlive-publishers texlive-lang-chinese
+            sudo apt install -y latexdiff texlive-latex-extra texlive-xetex texlive-publishers texlive-lang-chinese biber
 
             make release-$sha
             make diff previous=$version current=$sha
