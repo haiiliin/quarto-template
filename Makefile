@@ -1,4 +1,6 @@
 project = paper
+engine = xelatex
+backend = bibtex
 
 all: paper clean
 
@@ -47,10 +49,10 @@ release-%:
 diff:
 	cd releases/$(current) && latexdiff --graphics-markup=both --math-markup=whole ../$(previous)/$(project).tex $(project).tex > $(project)-diff-$(previous)-$(current).tex
 	cp -n releases/$(previous)/figures/* releases/$(current)/figures/ || true
-	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
-	cd releases/$(current) && bibtex  $(project)-diff-$(previous)-$(current).aux || true
-	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
-	cd releases/$(current) && xelatex $(project)-diff-$(previous)-$(current).tex
+	cd releases/$(current) && $(engine)  $(project)-diff-$(previous)-$(current).tex
+	cd releases/$(current) && $(backend) $(project)-diff-$(previous)-$(current).aux || true
+	cd releases/$(current) && $(engine)  $(project)-diff-$(previous)-$(current).tex
+	cd releases/$(current) && $(engine)  $(project)-diff-$(previous)-$(current).tex
 
 change-%:
 	mkdir -p changes
