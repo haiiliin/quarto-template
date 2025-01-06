@@ -17,6 +17,9 @@ authors-block:
 geotechnique:
 	quarto add haiiliin/quarto-geotechnique --no-prompt
 
+emerald:
+	quarto add haiiliin/quarto-emerald --no-prompt
+
 critic-markup:
 	quarto add mloubout/critic-markup --no-prompt
 
