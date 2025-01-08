@@ -23,7 +23,6 @@ website:
   page-navigation: true
   repo-url: https://github.com/haiiliin/quarto-template
   repo-actions: [edit, issue]
-  search: true
   navbar:
     background: primary
     search: true
