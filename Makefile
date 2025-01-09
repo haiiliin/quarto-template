@@ -22,6 +22,9 @@ geotechnique:
 emerald:
 	quarto add haiiliin/quarto-emerald --no-prompt
 
+nature:
+	quarto add christopherkenny/nature --no-prompt
+
 critic-markup:
 	quarto add mloubout/critic-markup --no-prompt
 
