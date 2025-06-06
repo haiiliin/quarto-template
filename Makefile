@@ -50,18 +50,18 @@ release-%:
 
 # make diff previous=<previous release> current=<current release>
 diff:
-	cd releases/$(current) && latexdiff --graphics-markup=both --math-markup=whole ../$(previous)/$(project).tex $(project).tex > $(project)-diff-$(previous)-$(current).tex
-	cp -n releases/$(previous)/figures/* releases/$(current)/figures/ || true
-	cd releases/$(current) && $(engine)  $(project)-diff-$(previous)-$(current).tex
-	cd releases/$(current) && $(backend) $(project)-diff-$(previous)-$(current) || true
-	cd releases/$(current) && $(engine)  $(project)-diff-$(previous)-$(current).tex
-	cd releases/$(current) && $(engine)  $(project)-diff-$(previous)-$(current).tex
-
-change-%:
-	mkdir -p changes
-	pandiff releases/$*/paper.md paper.md --output changes/paper.md
-	awk '/^---/{flag=!flag} flag' paper.md > changes/_metadata.yml
-	cp -r figures *.bib *.lua changes || true
+	cd releases/$(current) && latexdiff --graphics-markup=both --math-markup=whole --config SCALEDELGRAPHICS=1 ../$(previous)/$(project).tex $(project).tex > $(project)-diff-$(previous)-$(current).tex
+	mkdir -p releases/$(current)/temp/
+	mkdir -p releases/$(current)/temp/figures/
+	cp releases/$(current)/*.* releases/$(current)/temp/ || true
+	cp releases/$(current)/figures/* releases/$(current)/temp/figures/ || true
+	cp -n releases/$(previous)/figures/* releases/$(current)/temp/figures/ || true
+	cd releases/$(current)/temp && $(engine) -interaction=nonstopmode $(project)-diff-$(previous)-$(current) || true
+	cd releases/$(current)/temp && $(backend)                         $(project)-diff-$(previous)-$(current) || true
+	cd releases/$(current)/temp && $(engine) -interaction=nonstopmode $(project)-diff-$(previous)-$(current) || true
+	cd releases/$(current)/temp && $(engine) -interaction=nonstopmode $(project)-diff-$(previous)-$(current) || true
+	cp releases/$(current)/temp/$(project)-diff-$(previous)-$(current).pdf releases/$(current)
+	rm -rf releases/$(current)/temp/
 
 clean:
 	git clean -Xdf
