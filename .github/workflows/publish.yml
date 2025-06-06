@@ -47,14 +47,6 @@ jobs:
           echo "version=$(cat releases/VERSION || echo '')" >> $GITHUB_ENV
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-      - name: Generate changes
-        if: env.version != '' && 0 == 1
-        run: |
-          if [ -d "releases/$version" ]; then
-            npm install -g pandiff
-            make change-$version
-          fi
-
       - name: Render Quarto Project
         run: |
           make paper
