@@ -31,7 +31,7 @@ critic-markup:
 wordcount:
 	quarto add andrewheiss/quarto-wordcount --no-prompt
 
-deps: elsevier asce wiley authors-block critic-markup wordcount
+deps: elsevier authors-block wordcount
 
 paper:
 	quarto render --output-dir outputs

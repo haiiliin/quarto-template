@@ -40,9 +40,6 @@ website:
     collapse-level: 1
     contents: auto
 
-# filters:
-#   - critic-markup
-
 format:
   jats: default
   html:
@@ -62,7 +59,6 @@ format:
     filters:
       - abstract.lua
       - authors-block
-      - _extensions/andrewheiss/wordcount/wordcount.lua
 
   # https://github.com/quarto-journals/elsevier
   elsevier-pdf:
