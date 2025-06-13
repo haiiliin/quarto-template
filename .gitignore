@@ -316,6 +316,7 @@ paper-listing.json
 /releases/*/*.zip
 /releases/*/_tex/
 /releases/*/site_libs/
+/releases/*/releases/
 /site_libs/
 /*.bst
 /*.cls
