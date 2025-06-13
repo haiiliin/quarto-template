@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving
+and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
+
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
+
+<front>
+
+
+<article-meta>
+
+
+<title-group>
+<article-title>Quarto template for writing academic
+papers</article-title>
+</title-group>
+
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0000-0001-5759-2455</contrib-id>
+<name>
+<surname>Wang</surname>
+<given-names>Hai-Lin</given-names>
+</name>
+<string-name>Hai-Lin Wang</string-name>
+
+<email>hailin.wang@connect.polyu.hk</email>
+<xref ref-type="aff" rid="aff-1">a</xref>
+<xref ref-type="aff" rid="aff-2">b</xref>
+<xref ref-type="corresp" rid="cor-1">&#x002A;</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1">
+<institution-wrap>
+<institution>Department of Civil and Environmental Engineering, The Hong
+Kong Polytechnic University, Hong Kong, China</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<aff id="aff-2">
+<institution-wrap>
+<institution>Department of Geotechnical Engineering, College of Civil
+Engineering, Tongji University, Shanghai, China</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-1">hailin.wang@connect.polyu.hk</corresp>
+</author-notes>
+
+
+
+
+
+
+
+
+
+<history></history>
+
+
+<abstract>
+<p>The
+<ext-link ext-link-type="uri" xlink:href="https://github.com/haiiliin/quarto-template">quarto-template</ext-link>
+is a Quarto template for writing academic papers. The template is based
+on the
+<ext-link ext-link-type="uri" xlink:href="https://quarto.org">Quarto</ext-link>
+document system, which is a document system that supports the entire
+research lifecycle, from initial exploration to final publication. The
+template provides a simple and clean layout for writing academic papers,
+which is suitable for researchers who want to focus on the content of
+the paper rather than the formatting.</p>
+</abstract>
+<kwd-group kwd-group-type="author">
+<kwd>Manuscript</kwd>
+<kwd>Template</kwd>
+</kwd-group>
+
+
+
+
+</article-meta>
+
+</front>
+
+<body>
+<sec id="features">
+  <title>Features</title>
+  <list list-type="bullet">
+    <list-item>
+      <p>Write academic papers in markdown, focusing on the content
+      rather than the formatting. See
+      <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/guide/">Quarto
+      documentation</ext-link> for more information.</p>
+    </list-item>
+    <list-item>
+      <p>Export to html, docx, and pdf documents using the Quarto
+      document system (<monospace>make paper</monospace>).</p>
+    </list-item>
+    <list-item>
+      <p>Make releases with markdown, tex, docx, and pdf documents
+      archived (<monospace>make release-&lt;tag&gt;</monospace>).
+      Generate a diff file compared with a previous release using
+      latexdiff
+      (<monospace>make diff previous=&lt;previous-tag&gt; current=&lt;current-tag&gt;</monospace>).</p>
+    </list-item>
+    <list-item>
+      <p>Publish the HTML version of the paper to the web using GitHub
+      Pages.</p>
+    </list-item>
+  </list>
+</sec>
+<sec id="prerequisites">
+  <title>Prerequisites</title>
+  <p>To use the template, you need to have the Quarto document system
+  installed on your computer. You can install Quarto by following the
+  instructions on the
+  <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/getting-started/">Quarto
+  website</ext-link>.</p>
+  <p>To render the paper to PDF, you also need to have a LaTeX
+  distribution installed on your computer. You can install LaTeX by
+  following the instructions on the
+  <ext-link ext-link-type="uri" xlink:href="https://www.latex-project.org/get/">LaTeX
+  website</ext-link>. You can also use the
+  <ext-link ext-link-type="uri" xlink:href="https://yihui.org/tinytex/">tinytex</ext-link>
+  package for a lightweight LaTeX distribution:</p>
+  <code language="bash">quarto install tinytex</code>
+  <p>See
+  <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/output-formats/pdf-engine.html">PDF
+  Engines in Quarto</ext-link> for more information.</p>
+  <p>The GNU Make utility is required to run the commands in the
+  <monospace>Makefile</monospace>. You can install GNU Make by following
+  the instructions on the
+  <ext-link ext-link-type="uri" xlink:href="https://www.gnu.org/software/make/">GNU
+  Make website</ext-link>. If you are using Windows, you can install GNU
+  Make from the
+  <ext-link ext-link-type="uri" xlink:href="http://gnuwin32.sourceforge.net/packages/make.htm">GnuWin32</ext-link>
+  project.</p>
+  <p>To clone the repository and run the commands in the
+  <monospace>Makefile</monospace>, you need to have Git installed on
+  your computer. You can install Git by following the instructions on
+  the
+  <ext-link ext-link-type="uri" xlink:href="https://git-scm.com/">Git
+  website</ext-link>. If you prefer to use a graphical user interface
+  for Git, you can install
+  <ext-link ext-link-type="uri" xlink:href="https://desktop.github.com/">GitHub
+  Desktop</ext-link>.</p>
+</sec>
+<sec id="usages">
+  <title>Usages</title>
+  <sec id="setup-the-project">
+    <title>Setup the project</title>
+    <p>The template is designed to be easy to use, with minimal
+    configuration required. To use the template, simply fork the
+    <ext-link ext-link-type="uri" xlink:href="https://github.com/haiiliin/quarto-template">quarto-template</ext-link>
+    repository. You can then clone the repository to your local computer
+    using Git:</p>
+    <code language="bash">git clone https://github.com/&lt;your-username&gt;/&lt;your-repository&gt;.git</code>
+    <p>Or you can simply open the repository in GitHub Desktop from the
+    browser.</p>
+  </sec>
+  <sec id="start-writing">
+    <title>Start writing</title>
+    <p>You can now start writing your paper in the
+    <monospace>paper.md</monospace> file. For more information on how to
+    write papers using the Quarto document system, please refer to the
+    <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/guide/">Quarto
+    documentation</ext-link>.</p>
+    <p>To configure the metadata of the paper, such as the title,
+    authors, abstract, and article template to use, you can edit the
+    YAML front matter at the beginning of the
+    <monospace>paper.md</monospace> file and the
+    <monospace>_quarto.yml</monospace> file.</p>
+  </sec>
+  <sec id="render-the-paper">
+    <title>Render the paper</title>
+    <p>To render the paper to PDF, run the following commands in the
+    terminal:</p>
+    <code language="bash">make deps   # Fetch the extensions for journal articles
+make paper  # Render the paper to docx, html, and pdf files
+make clean  # Clean up the intermediate files</code>
+  </sec>
+  <sec id="making-releases">
+    <title>Making releases</title>
+    <p>You can use the following command to make a release, markdown,
+    tex, docx, and pdf documents will be archived in the directory
+    <monospace>releases/&lt;tag&gt;</monospace>:</p>
+    <preformat>make release-&lt;tag&gt;</preformat>
+    <p>You can also use the following command to generate a diff file
+    compared with a previous release using latexdiff:</p>
+    <preformat>make diff previous=&lt;previous-tag&gt; current=&lt;current-tag&gt;</preformat>
+  </sec>
+  <sec id="commit-and-push">
+    <title>Commit and push</title>
+    <p>After writing the paper, commit and push the changes to your
+    repository. You can then share the link to the repository with your
+    collaborators or submit the paper to a journal for publication.</p>
+    <p>A html version of the paper will be published to the
+    <monospace>gh-pages</monospace> branch of the repository after every
+    commit. You can turn on the GitHub Pages feature in the repository
+    settings to publish the html version of the paper to the web. You
+    can then view the paper online by visiting the link provided in the
+    repository settings.</p>
+    <disp-quote>
+      <p>[!Note] You need to turn on the <bold>Read and write
+      permissions</bold> for the <bold>Actions</bold> in the
+      <bold>Settings</bold> of your repository to grant the permission
+      for the GitHub Actions to upload the rendered files.</p>
+    </disp-quote>
+  </sec>
+</sec>
+</body>
+
+<back>
+</back>
+
+
+</article>
