@@ -22,8 +22,8 @@ bibliography: [references.bib]
 
 # Features
 
-- Write academic papers in markdown, focus on the content rather than the formatting. See [Quarto documentation](https://quarto.org/docs/guide/) for more information.
-- Export to html, docx, and pdf formats using the Quarto document system (`make paper`).
+- Write academic papers in markdown, focusing on the content rather than the formatting. See [Quarto documentation](https://quarto.org/docs/guide/) for more information.
+- Export to html, docx, and pdf documents using the Quarto document system (`make paper`).
 - Make releases with markdown, tex, docx, and pdf documents archived (`make release-<tag>`). Generate a diff file compared with a previous release using latexdiff (`make diff previous=<previous-tag> current=<current-tag>`).
 - Publish the HTML version of the paper to the web using GitHub Pages.
 
@@ -69,7 +69,7 @@ make clean  # Clean up the intermediate files
 
 ## Making releases
 
-You can use the following to make a release, markdown, tex, docx, and pdf documents will be archived in the directory `releases/<tag>`:
+You can use the following command to make a release, markdown, tex, docx, and pdf documents will be archived in the directory `releases/<tag>`:
 
 ```shell
 make release-<tag>
