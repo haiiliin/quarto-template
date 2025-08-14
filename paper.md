@@ -87,5 +87,6 @@ After writing the paper, commit and push the changes to your repository. You can
 
 A html version of the paper will be published to the `gh-pages` branch of the repository after every commit. You can turn on the GitHub Pages feature in the repository settings to publish the html version of the paper to the web. You can then view the paper online by visiting the link provided in the repository settings.
 
-> [!Note]
-> You need to turn on the **Read and write permissions** for the **Actions** in the **Settings** of your repository to grant the permission for the GitHub Actions to upload the rendered files.
+::: {.callout-note}
+You need to turn on the **Read and write permissions** for the **Actions** in the **Settings** of your repository to grant the permission for the GitHub Actions to upload the rendered files.
+:::
