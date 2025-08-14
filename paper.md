@@ -67,7 +67,7 @@ make paper  # Render the paper to docx, html, and pdf files
 make clean  # Clean up the intermediate files
 ```
 
-## Making releases
+## Make releases
 
 You can use the following command to make a release, markdown, tex, docx, and pdf documents will be archived in the directory `releases/<tag>`:
 
