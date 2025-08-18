@@ -11,7 +11,6 @@ comments:
 
 manuscript:
   article: paper.md
-  meca-bundle: true
   code-links:
     - text: Code Repository
       icon: file-code
@@ -41,7 +40,6 @@ website:
     contents: auto
 
 format:
-  jats: default
   html:
     toc: true
     code-fold: true
