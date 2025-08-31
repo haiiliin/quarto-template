@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "paper.html",
+    "href": "paper.html",
+    "title": "Quarto template for writing academic papers",
+    "section": "",
+    "text": "Write academic papers in markdown, focusing on the content rather than the formatting. See Quarto documentation for more information.\nExport to html, docx, and pdf documents using the Quarto document system (make paper).\nMake releases with markdown, tex, docx, and pdf documents archived (make release-&lt;tag&gt;). Generate a diff file compared with a previous release using latexdiff (make diff previous=&lt;previous-tag&gt; current=&lt;current-tag&gt;).\nPublish the HTML version of the paper to the web using GitHub Pages.",
+    "crumbs": [
+      "Quarto template for writing academic papers"
+    ]
+  },
+  {
+    "objectID": "paper.html#setup-the-project",
+    "href": "paper.html#setup-the-project",
+    "title": "Quarto template for writing academic papers",
+    "section": "Setup the project",
+    "text": "Setup the project\nThe template is designed to be easy to use, with minimal configuration required. To use the template, simply fork the quarto-template repository. You can then clone the repository to your local computer using Git:\ngit clone https://github.com/&lt;your-username&gt;/&lt;your-repository&gt;.git\nOr you can simply open the repository in GitHub Desktop from the browser.",
+    "crumbs": [
+      "Quarto template for writing academic papers"
+    ]
+  },
+  {
+    "objectID": "paper.html#start-writing",
+    "href": "paper.html#start-writing",
+    "title": "Quarto template for writing academic papers",
+    "section": "Start writing",
+    "text": "Start writing\nYou can now start writing your paper in the paper.md file. For more information on how to write papers using the Quarto document system, please refer to the Quarto documentation.\nTo configure the metadata of the paper, such as the title, authors, abstract, and article template to use, you can edit the YAML front matter at the beginning of the paper.md file and the _quarto.yml file.",
+    "crumbs": [
+      "Quarto template for writing academic papers"
+    ]
+  },
+  {
+    "objectID": "paper.html#render-the-paper",
+    "href": "paper.html#render-the-paper",
+    "title": "Quarto template for writing academic papers",
+    "section": "Render the paper",
+    "text": "Render the paper\nTo render the paper to PDF, run the following commands in the terminal:\nmake deps   # Fetch the extensions for journal articles\nmake paper  # Render the paper to docx, html, and pdf files\nmake clean  # Clean up the intermediate files",
+    "crumbs": [
+      "Quarto template for writing academic papers"
+    ]
+  },
+  {
+    "objectID": "paper.html#make-releases",
+    "href": "paper.html#make-releases",
+    "title": "Quarto template for writing academic papers",
+    "section": "Make releases",
+    "text": "Make releases\nYou can use the following command to make a release, markdown, tex, docx, and pdf documents will be archived in the directory releases/&lt;tag&gt;:\nmake release-&lt;tag&gt;\nYou can also use the following command to generate a diff file compared with a previous release using latexdiff:\nmake diff previous=&lt;previous-tag&gt; current=&lt;current-tag&gt;",
+    "crumbs": [
+      "Quarto template for writing academic papers"
+    ]
+  },
+  {
+    "objectID": "paper.html#commit-and-push",
+    "href": "paper.html#commit-and-push",
+    "title": "Quarto template for writing academic papers",
+    "section": "Commit and push",
+    "text": "Commit and push\nAfter writing the paper, commit and push the changes to your repository. You can then share the link to the repository with your collaborators or submit the paper to a journal for publication.\nA html version of the paper will be published to the gh-pages branch of the repository after every commit. You can turn on the GitHub Pages feature in the repository settings to publish the html version of the paper to the web. You can then view the paper online by visiting the link provided in the repository settings.\n\n\n\n\n\n\nNote\n\n\n\nYou need to turn on the Read and write permissions for the Actions in the Settings of your repository to grant the permission for the GitHub Actions to upload the rendered files.",
+    "crumbs": [
+      "Quarto template for writing academic papers"
+    ]
+  }
+]
